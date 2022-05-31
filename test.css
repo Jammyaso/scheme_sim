@@ -1,0 +1,25 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+#background{
+    background: url("media/avv1.png");
+    width: 2017px;
+    height: 732px;
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+#canvas{
+    width: 2017px;
+    height: 732px;
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+#select{
+    position: fixed;
+    top:10px;
+    left: 10px;
+}
