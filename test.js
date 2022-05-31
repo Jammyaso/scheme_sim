@@ -97,6 +97,7 @@ window.onload = function(){
             connections[key].isVisible = false;
         })
         connections[optionElement.value].isVisible = true;
+        
         renderAll();
     }
     wiresElement.onchange = function(e){
@@ -107,6 +108,16 @@ window.onload = function(){
             }
         })
         console.log(connections);
+        renderAll();
+    }
+    pointsElement.onchange = function(e){
+        Object.keys(connections).forEach(function(key) {
+            connections[key].isVisible = false;
+            if ( connections[key].points[0].point == pointsElement.value || connections[key].points[1].point == pointsElement.value){
+                connections[key].isVisible = true;
+            }
+        })
+        //console.log(connections);
         renderAll();
     }
     

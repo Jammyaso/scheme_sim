@@ -19,7 +19,7 @@ var connections = {
   "56-2": {
     points: [
       { point: "56-SB2", pin: 4, coords: { x: 783, y: 524 } },
-      { point: "KC29", pin: 4, coords: { x: 1687, y: 278 } },
+      { point: "KC29", pin: 4, coords: { x: 1688, y: 278 } },
     ],
     path: [
       { x: 787, y: 530 },
@@ -52,7 +52,7 @@ var connections = {
   },
   "57-8": {
     points: [
-      { point: "56-SB2", pin: 6, coords: { x: 1060, y: 579 } },
+      { point: "57-SB2", pin: 6, coords: { x: 1060, y: 579 } },
       { point: "KC29", pin: 6, coords: { x: 1688, y: 318 } },
     ],
     path: [
@@ -71,8 +71,8 @@ var connections = {
   },
   "57-2": {
     points: [
-      { point: "57-SB2", pin: 4, coords: { x: 1058, y: 524 } },
-      { point: "KC29", pin: 8, coords: {"x":1686,  "y":357} },
+      { point: "57-SB2", pin: 4, coords: { x: 1058, y: 522 } },
+      { point: "KC29", pin: 8, coords: {"x":1688,  "y":357} },
     ],
     path: [
       {"x":1066,  "y":528},
@@ -91,7 +91,7 @@ var connections = {
   "57-7": {
     points: [
       { point: "57-SB2", pin: 3, coords: { x: 980, y: 522 } },
-      { point: "KC29", pin: 7, coords: { x: 1686, y: 336 } },
+      { point: "KC29", pin: 7, coords: { x: 1688, y: 336 } },
     ],
     path: [
       { x: 978, y: 530 },
@@ -110,7 +110,7 @@ var connections = {
   839: {
     points: [
       { point: "HL13..HL15", pin: 1, coords: { x: 1235, y: 569 } },
-      { point: "KC29", pin: 9, coords: { x: 1686, y: 376 } },
+      { point: "KC29", pin: 9, coords: { x: 1688, y: 376 } },
     ],
     path: [
       { x: 1247, y: 575 },
@@ -129,7 +129,7 @@ var connections = {
   "0802": {
     points: [
       { point: "HL13..HL15", pin: 2, coords: { x: 1331, y: 569 } },
-      { point: "KC29", pin: 10, coords: { x: 1686, y: 397 } },
+      { point: "KC29", pin: 10, coords: { x: 1688, y: 397 } },
     ],
     path: [
       { x: 1325, y: 575 },
