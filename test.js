@@ -23,11 +23,8 @@ var Pins = {
         ctx.font = "20px serif";
         if (this.points[0].coords) {ctx.fillText(this.points[0].pin, this.points[0].coords.x, this.points[0].coords.y )}
         if (this.points[1].coords) {ctx.fillText(this.points[1].pin, this.points[1].coords.x, this.points[1].coords.y)}
-        
     }
 }
-
-
 window.onload = function(){
     var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext('2d');
@@ -40,31 +37,13 @@ window.onload = function(){
 
     Object.keys(connections).forEach(function(key) {
         Object.setPrototypeOf(connections[key], Pins);
-
         option = document.createElement("option");    
         option.text = "["+connections[key].wire+"] "+key;
         option.setAttribute("value", key);
         optionElement.appendChild(option);
-        
-        
-        if (!wiresList[connections[key].wire]) {
-            wiresList[connections[key].wire] = 1;
-        } else {
-            wiresList[connections[key].wire]++;
-        }
-
-        if (!pointsList[connections[key].points[0].point]) {
-            pointsList[connections[key].points[0].point] = 1;
-        } else {
-            pointsList[connections[key].points[0].point]++;
-        }
-        if (!pointsList[connections[key].points[1].point]) {
-
-            pointsList[connections[key].points[1].point] = 1;
-        } else {
-            pointsList[connections[key].points[1].point]++;
-        }
-        
+        if (!wiresList[connections[key].wire]) {wiresList[connections[key].wire] = 1;} else {wiresList[connections[key].wire]++;}
+        if (!pointsList[connections[key].points[0].point]) {pointsList[connections[key].points[0].point] = 1;} else {pointsList[connections[key].points[0].point]++;}
+        if (!pointsList[connections[key].points[1].point]) {pointsList[connections[key].points[1].point] = 1;} else {pointsList[connections[key].points[1].point]++;}
     })
     Object.keys(wiresList).forEach(function(key) {
         option = document.createElement("option");   
@@ -79,25 +58,24 @@ window.onload = function(){
         pointsElement.appendChild(option);
     })
     
-
     renderAll = function(){
         ctx.clearRect(0,0,canvas.width,canvas.height);
         Object.keys(connections).forEach(function(key) {
             if (connections[key]) connections[key].render(ctx, key);
         })
-    
     }
     renderAll();
 
     document.getElementById("canvas").onclick = function(e){
-        console.log('{"x":'+e.pageX+',  "y":'+e.pageY+'},');
+        console.log('{ x : '+e.pageX+', y : '+e.pageY+' },');
     }
     optionElement.onchange = function(e){
         Object.keys(connections).forEach(function(key) {
             connections[key].isVisible = false;
         })
         connections[optionElement.value].isVisible = true;
-        
+        wiresElement.value = "";
+        pointsElement.value = "";
         renderAll();
     }
     wiresElement.onchange = function(e){
@@ -107,7 +85,10 @@ window.onload = function(){
                 connections[key].isVisible = true;
             }
         })
-        console.log(connections);
+        //console.log(connections);
+        optionElement.value = "";
+        pointsElement.value = "";
+        
         renderAll();
     }
     pointsElement.onchange = function(e){
@@ -118,6 +99,9 @@ window.onload = function(){
             }
         })
         //console.log(connections);
+        wiresElement.value = "";
+        optionElement.value = "";
+        
         renderAll();
     }
     
