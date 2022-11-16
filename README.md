@@ -1,2 +1,2 @@
 # scheme_sim
-old scheme analysis and simulatin intrument crating try
+old scheme analysis and simulatin intrument creating try
